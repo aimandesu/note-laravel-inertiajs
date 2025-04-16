@@ -6,6 +6,7 @@ use App\Models\Note;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
+use Inertia\Inertia;
 
 class NoteController extends Controller
 {
@@ -24,8 +25,11 @@ class NoteController extends Controller
             Artisan::call('guests:cleanup');
         }
 
-        $notes = Note::where('user_id', $guestId)->get();
-        return $this->showAll($notes);
+        $notes = Note::where('user_id', $guestId)->latest()->get();
+
+        return Inertia::render('Notes/Index', [
+            'notes' => $notes,
+        ]);
     }
 
     /**
@@ -57,8 +61,8 @@ class NoteController extends Controller
         ]);
 
 
-
-        return $this->showOne($note, 201);
+        return redirect('/notes');
+        // return $this->showOne($note, 201);
     }
 
     /**

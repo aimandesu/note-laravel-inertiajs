@@ -26,4 +26,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/users', [UserController::class, 'index']);
+Route::get('/notes', [NoteController::class, 'index']);
+Route::post('add/notes', [NoteController::class, 'store'])->middleware('trackGuestActivity');
+
 require __DIR__.'/auth.php';

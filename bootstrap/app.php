@@ -30,6 +30,6 @@ return Application::configure(basePath: dirname(__DIR__))
         //
     })
     ->withSchedule(function (Schedule $schedule) {
-        $schedule->command('guests:cleanup')->everyFifteenSeconds(); //listen to condition every minute, change to every 5 minutes
+        $schedule->command('guests:cleanup')->daily(); //listen to condition every minute, change to every 5 minutes
     })
     ->create();

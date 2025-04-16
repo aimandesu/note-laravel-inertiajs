@@ -21,9 +21,9 @@ class NoteController extends Controller
         // $guestId = User::getGuestId();
         $guestId = $request->session()->get('guest_data.user_id');
 
-        if(!$guestId){
-            Artisan::call('guests:cleanup');
-        }
+        // if(!$guestId){
+        //     Artisan::call('guests:cleanup');
+        // }
 
         $notes = Note::where('user_id', $guestId)->latest()->get();
 

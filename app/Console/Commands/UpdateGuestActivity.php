@@ -20,7 +20,7 @@ class UpdateGuestActivity extends Command
     /**
      * Execute the console command.
      */
-    public function handle()
+    public function handle() //only for cron jobs
     {
         $inactiveGuests = User::where('isGuest', true)
             ->where('last_activity', '<', now()->subMinutes(config('session.lifetime')))

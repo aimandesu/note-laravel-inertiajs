@@ -13,4 +13,5 @@ Route::middleware(['web'])->group(function () {
     Route::get('/users', [UserController::class, 'index']);
     Route::get('/notes', [NoteController::class, 'index']);
     Route::post('add/notes', [NoteController::class, 'store'])->middleware('trackGuestActivity');
+    Route::get('/user/show', [UserController::class, 'show']);
 });

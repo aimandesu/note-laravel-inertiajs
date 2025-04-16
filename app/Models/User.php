@@ -45,13 +45,13 @@ class User extends Model
             // ->count();
 
             //if based on sessions
-            $expired = DB::table('sessions')
-            ->where('last_activity', '<', now()->subMinutes(config('session.lifetime'))->timestamp)
-            ->count();
+            // $expired = DB::table('sessions')
+            // ->where('last_activity', '<', now()->subMinutes(config('session.lifetime'))->timestamp)
+            // ->count();
             
-            if ($expired) {
-                Artisan::call('guests:cleanup');
-            }
+            // if ($expired) {
+            //     Artisan::call('guests:cleanup');
+            // }
 
             $guest = self::create([
                 'name' => 'Guest',

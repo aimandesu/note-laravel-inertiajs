@@ -48,7 +48,7 @@ for example: http://127.0.0.1:8000/notes
 
 ### Screenshots
 
-<div style="display: flex; justify-content: space-between; align-items: center;">
+<div style="display: flex; gap: 10px; flex-wrap: wrap;">
   <img src="public/images/screenshot_1.png" width="200" alt="Screenshot 1">
   <img src="public/images/screenshot_2.png" width="200" alt="Screenshot 2">
   <img src="public/images/screenshot_3.png" width="200" alt="Screenshot 3">

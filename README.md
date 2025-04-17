@@ -15,6 +15,9 @@ A simple note-taking application built with Laravel and Inertia.js with React wi
 Update your `.env` file with these key configurations:
 
 ````ini
+Install XAMPP and make database name: note
+
+Configuration in .env in project root directory
 DB_DATABASE=note
 SESSION_DRIVER=database
 SESSION_LIFETIME=1
@@ -43,6 +46,9 @@ php artisan serve
 Find your localhost from php artisan serve terminal it should be listed
 then go to any browser and do localhost/notes
 for example: http://127.0.0.1:8000/notes
+
+from there you can add notes and see the session running and will stops once the timer ends
+which will make you cant add anymore
 
 ## App Preview
 
